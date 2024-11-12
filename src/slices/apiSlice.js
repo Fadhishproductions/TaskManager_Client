@@ -97,7 +97,10 @@ endpoints:(builder)=>({
         }),
         invalidatesTags: ['Task'],
       }),
-
+      getTaskStatistics: builder.query({
+        query: () => `${taskUrl}/stats`, // Endpoint to fetch task statistics
+        providesTags: ['Task'],
+      }),
 
 
 }),
@@ -110,5 +113,6 @@ export const {
     useCreateTaskMutation,
     useDeleteTaskMutation,
     useEditTaskMutation,
-    useMarkTaskCompletedMutation
+    useMarkTaskCompletedMutation,
+    useGetTaskStatisticsQuery
 } = apiSlice

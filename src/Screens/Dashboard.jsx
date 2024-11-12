@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import TaskStatisticsChart from '../Components/TaskStatisticsChart';
 
 const Dashboard = () => {
 
@@ -54,6 +55,11 @@ const Dashboard = () => {
             </p>
           </div>
         </Col>
+      </Row>
+      <Row>
+       {userInfo && (
+        <TaskStatisticsChart/>
+       )} 
       </Row>
     </Container>
   );
