@@ -12,7 +12,7 @@ import {
 } from '../slices/apiSlice';
 import { useSelector } from 'react-redux';
 console.log('process.env.REACT_APP_SOCKETURL',process.env)
-const socket = io('http://localhost:4000', {
+const socket = io(process.env.REACT_APP_SOCKETURL, {
   withCredentials: true,
 });
 
